@@ -1,65 +1,111 @@
-<!DOCTYPE html>
+<!DOCTYPE html>                                                                                                                                                                                                                                                                                                            
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emad Fahim | Python Developer & Canva Designer</title>
+  <title>Emad Fahim | Developer & Designer</title>
   <link rel="icon" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
   <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333;
+      --accent-color: #007acc;
+      --card-color: #f9f9f9;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #ddd;
+      --accent-color: #4dabf7;
+      --card-color: #1e1e1e;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background-color: #f0f4f8;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     header {
-      background: #007acc;
+      background: var(--accent-color);
       color: white;
-      padding: 40px 20px 20px;
       text-align: center;
+      padding: 40px 20px 20px;
     }
 
-    header img {
-      max-width: 100%;
-      height: auto;
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--card-color);
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 10px 15px;
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
       max-width: 1000px;
-      margin: 0 auto;
+      margin: auto;
       padding: 30px 20px;
-      background-color: white;
     }
 
-    h1, h2, h3 {
+    h2 {
       text-align: center;
-      color: #007acc;
+      color: var(--accent-color);
+    }
+
+    .section {
+      margin: 60px 0;
+      background-color: var(--card-color);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     .intro img {
       float: right;
-      width: 300px;
+      width: 280px;
       margin-left: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
     }
 
-    p {
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    .social-icons img, .tools img {
-      width: 40px;
-      margin: 10px 10px 10px 0;
-    }
-
-    .section {
-      margin: 40px 0;
-    }
-
-    .tools {
+    .tools, .social-icons {
       text-align: center;
+    }
+
+    .tools img, .social-icons img {
+      width: 40px;
+      margin: 10px;
     }
 
     footer {
@@ -70,88 +116,131 @@
       font-size: 14px;
     }
 
-    a {
-      color: #007acc;
-      text-decoration: none;
+    .toggle-button {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: var(--accent-color);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
     }
 
-    a:hover {
-      text-decoration: underline;
+    ul {
+      line-height: 1.8;
     }
 
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    @media screen and (max-width: 700px) {
+      .intro img {
+        float: none;
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
 
+<button class="toggle-button" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
 <header>
-  <a href="https://EmadFahim134.io" target="_blank">
-    <img src="https://user-images.githubusercontent.com/90236635/232446433-d5540fa2-fe28-4bb8-b929-cdb51fe61336.gif" alt="Banner">
-  </a>
+  <img src="https://user-images.githubusercontent.com/90236635/232446433-d5540fa2-fe28-4bb8-b929-cdb51fe61336.gif" alt="Header" width="100%" />
   <h1>Hi 👋, I'm Emad Fahim</h1>
-  <h3>Aspiring Python Developer & Creative Designer from Pakistan</h3>
+  <h3>Aspiring Python Developer & Creative Canva Designer</h3>
 </header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#canva">Canva Portfolio</a>
+  <a href="#contact">Contact</a>
+  <a href="#stats">GitHub Stats</a>
+</nav>
 
 <div class="container">
 
-  <div class="intro clearfix">
+  <section id="about" class="section intro clearfix">
     <img src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" alt="Coding">
-    <p>Hello! I'm Emad, a beginner Python developer passionate about coding, creativity, and learning new technologies. I specialize in Python, Scratch, SQL, and have hands-on experience with Panda3D. I'm also an expert Canva designer, skilled in creating stunning presentations, visual content, and social media graphics.</p>
-  </div>
+    <p>I'm Emad Fahim, a beginner Python developer from Pakistan with a growing passion for code and creativity. I specialize in Python, Scratch, SQL, and Panda3D game development. Besides coding, I'm an expert Canva designer, creating eye-catching presentations, logos, thumbnails, infographics, and more.</p>
+  </section>
 
-  <div class="section">
-    <h2>🌟 Skills & Expertise</h2>
+  <section id="skills" class="section">
+    <h2>🌟 Skills & Tools</h2>
     <ul>
-      <li>Python Programming & Game Development (Panda3D)</li>
+      <li>Python Programming & Panda3D Game Dev</li>
       <li>Scratch & SQL Databases</li>
-      <li>Graphic Design using Canva</li>
-      <li>Professional Presentations & Visual Storytelling</li>
-      <li>Creative Problem Solving & UI Concepts</li>
+      <li>Professional Canva Designs (logos, thumbnails, posts)</li>
+      <li>Creative Presentations & Infographics</li>
+      <li>Git, Bash, SQLite, MySQL</li>
     </ul>
-  </div>
+    <div class="tools">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
+      <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="SQLite">
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
+      <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_logo.svg" alt="Canva" style="background:white; border-radius:5px;">
+    </div>
+  </section>
 
-  <div class="section">
+  <section id="canva" class="section">
+    <h2>🎨 Canva Portfolio</h2>
+    <p>Below is a sample of my design work using Canva. I specialize in presentations, social media graphics, YouTube thumbnails, and more. I blend design with storytelling to create engaging visuals.</p>
+    <!-- Replace this iframe with your own Canva shared project link -->
+    <iframe src="https://www.canva.com/design/DAF-DGZbsrs/view?embed" allowfullscreen></iframe>
+  </section>
+
+  <section id="contact" class="section">
     <h2>📬 Contact Me</h2>
     <p>📧 Email: <a href="mailto:mremad.fahim@gmail.com">mremad.fahim@gmail.com</a></p>
-    <p>
+    <div class="social-icons">
       <a href="https://instagram.com/emad.delta45" target="_blank">
         <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram">
       </a>
       <a href="https://discord.gg/XNSfuADUuu" target="_blank">
         <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Discord">
       </a>
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>🛠️ Tools & Technologies</h2>
-    <div class="tools">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="Photoshop">
-      <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="SQLite">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
-      <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_logo.svg" alt="Canva" style="background:white; border-radius:5px;">
     </div>
-  </div>
+  </section>
 
-  <div class="section">
+  <section id="stats" class="section">
     <h2>📊 GitHub Stats</h2>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=emadfahim134&show_icons=true&locale=en&layout=compact" alt="Top Languages">
-  </div>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=emadfahim134&show_icons=true&locale=en&layout=compact" alt="Top Languages" style="width:100%; max-width:600px; display:block; margin:auto;">
+  </section>
 
 </div>
 
 <footer>
-  © 2025 Emad Fahim | Designed with passion using HTML & CSS | Powered by GitHub Pages
+  © 2025 Emad Fahim | Designed with HTML, CSS & Passion | Hosted on GitHub Pages
 </footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector('.toggle-button').textContent =
+      document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
+</script>
 
 </body>
 </html>
+                                                                                                    
+  
+  
+  
+  
+  
                                                                                                                                             
   
   
