@@ -73,6 +73,4 @@ Architecture : x86_64
 
 ### "Every expert was once a beginner."
 
-⭐ Thanks for visiting my profile!
-
 </div>
