@@ -1,248 +1,529 @@
-<!DOCTYPE html>                                                                                                                                                                                                                                                                                                            
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emad Fahim | Developer & Designer</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emad Fahim</title>
   <style>
     :root {
-      --bg-color: #ffffff;
-      --text-color: #333;
-      --accent-color: #007acc;
-      --card-color: #f9f9f9;
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #0f141b;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-2: #7ee787;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
     }
 
-    body.dark-mode {
-      --bg-color: #121212;
-      --text-color: #ddd;
-      --accent-color: #4dabf7;
-      --card-color: #1e1e1e;
+    .light {
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --surface-2: #eef2f7;
+      --border: #d0d7de;
+      --text: #24292f;
+      --muted: #57606a;
+      --accent: #0969da;
+      --accent-2: #1a7f37;
+      --shadow: 0 18px 40px rgba(140, 149, 159, 0.18);
     }
 
     * {
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(88, 166, 255, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(126, 231, 135, 0.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    header {
-      background: var(--accent-color);
-      color: white;
-      text-align: center;
-      padding: 40px 20px 20px;
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
     }
 
-    nav {
+    .topbar {
       display: flex;
-      justify-content: center;
-      background-color: var(--card-color);
-      border-bottom: 1px solid #ccc;
-      padding: 10px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.08);
+      flex: 0 0 auto;
+    }
+
+    .brand h1 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .brand p {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.95rem;
+    }
+
+    .toggle {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 16px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.25s ease;
+    }
+
+    .toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 24%), var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 28px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 24px 0 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.55), transparent);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--surface-2);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 12px rgba(126, 231, 135, 0.75);
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 68ch;
+      font-size: 1.02rem;
+    }
+
+    .quote {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface-2);
+      border-radius: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--text);
+    }
+
+    .chips {
+      display: flex;
       flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    nav a {
-      margin: 10px 15px;
-      color: var(--text-color);
+    .chip {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .stack {
+      padding: 22px;
+    }
+
+    .section-title {
+      font-size: 1.08rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .list li {
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text);
+      white-space: pre-wrap;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .repos {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .repo {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%), var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      min-height: 150px;
+    }
+
+    .repo:hover {
+      transform: translateY(-2px);
+      border-color: rgba(88, 166, 255, 0.55);
+    }
+
+    .repo a {
+      color: var(--accent);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 650;
+      font-size: 1.02rem;
+      display: inline-block;
+      margin-bottom: 10px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .repo p {
+      color: var(--muted);
+      line-height: 1.6;
+      min-height: 48px;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    h2 {
+    .badge {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .footer {
+      margin-top: 18px;
       text-align: center;
-      color: var(--accent-color);
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding-bottom: 6px;
     }
 
     .section {
-      margin: 60px 0;
-      background-color: var(--card-color);
-      padding: 20px;
-      border-radius: 10px;
+      margin-top: 18px;
+      padding: 22px;
     }
 
-    .intro img {
-      float: right;
-      width: 280px;
-      margin-left: 20px;
-      border-radius: 10px;
+    .inline-link {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    .tools, .social-icons {
-      text-align: center;
+    .inline-link:hover {
+      text-decoration: underline;
     }
 
-    .tools img, .social-icons img {
-      width: 40px;
-      margin: 10px;
+    @media (max-width: 900px) {
+      .grid, .split { grid-template-columns: 1fr; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .toggle { width: 100%; }
+      .wrap { padding: 16px; }
+      .hero, .stack, .section { padding: 18px; }
+      .repos { grid-template-columns: 1fr; }
+      .brand h1 { font-size: 1.45rem; }
+      .hero h2 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+      .hero p { font-size: 0.98rem; }
+      .chip { font-size: 0.88rem; }
     }
 
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    .toggle-button {
-      position: fixed;
-      top: 15px;
-      right: 20px;
-      background: var(--accent-color);
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-
-    ul {
-      line-height: 1.8;
-    }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-
-    @media screen and (max-width: 700px) {
-      .intro img {
-        float: none;
-        display: block;
-        margin: 20px auto;
-        width: 90%;
-      }
+    @media (max-width: 480px) {
+      .wrap { padding: 12px; }
+      .card { border-radius: 16px; }
+      .hero, .stack, .section { padding: 16px; }
+      .avatar { width: 42px; height: 42px; }
+      .brand { gap: 10px; }
+      .brand p { font-size: 0.88rem; }
+      .toggle { padding: 10px 14px; font-size: 0.92rem; }
+      .chips { gap: 8px; }
+      .chip { padding: 8px 10px; }
+      .repo { padding: 16px; }
+      .repo p { min-height: auto; }
+      .mono { font-size: 0.88rem; padding: 14px; }
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <img class="avatar" id="profilePic" alt="Emad Fahim profile picture" />
+        <div>
+          <h1>Emad Fahim</h1>
+          <p>Learning • Building • Improving</p>
+        </div>
+      </div>
+      <button class="toggle" onclick="toggleTheme()" id="themeBtn">Switch theme</button>
+    </header>
 
-<button class="toggle-button" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <main class="grid">
+      <section class="card hero">
+        <div class="eyebrow"><span class="status-dot"></span> Active learner and builder</div>
+        <h2>Practical work, clean design, and steady progress.</h2>
+        <p>
+          I am a student and tech enthusiast focused on programming, automation, Linux, and creative design.
+          I like building useful things, learning the fundamentals properly, and keeping my workflow simple.
+        </p>
+        <div class="quote">&gt; Learning. Building. Improving.</div>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">C</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Bash</span>
+          <span class="chip">Batch</span>
+          <span class="chip">Canva</span>
+        </div>
+      </section>
 
-<header>
-  <img src="https://user-images.githubusercontent.com/90236635/232446433-d5540fa2-fe28-4bb8-b929-cdb51fe61336.gif" alt="Header" width="100%" />
-  <h1>Hi 👋, I'm Emad Fahim</h1>
-  <h3>Aspiring Python Developer & Creative Canva Designer</h3>
-</header>
+      <aside class="card stack">
+        <h3 class="section-title">Profile</h3>
+        <ul class="list">
+          <li>Intermediate Python learner</li>
+          <li>Basic knowledge of C programming</li>
+          <li>Linux enthusiast</li>
+          <li>Bash and Batch scripting</li>
+          <li>Canva designer</li>
+          <li>Always learning something new</li>
+        </ul>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#canva">Canva Portfolio</a>
-  <a href="#contact">Contact</a>
-  <a href="#stats">GitHub Stats</a>
-</nav>
+        <div style="height:16px"></div>
+        <h3 class="section-title">Current Focus</h3>
+        <ul class="list">
+          <li>Advanced Python concepts</li>
+          <li>Linux administration</li>
+          <li>Open source contribution</li>
+          <li>Automation and productivity tools</li>
+        </ul>
+      </aside>
+    </main>
 
-<div class="container">
+    <section class="card section">
+      <h3 class="section-title">Tech & Tools</h3>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">C language</span>
+        <span class="chip">Linux</span>
+        <span class="chip">Bash scripting</span>
+        <span class="chip">Batch scripting</span>
+        <span class="chip">Canva designing</span>
+      </div>
 
-  <section id="about" class="section intro clearfix">
-    <img src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif" alt="Coding">
-    <p>I'm Emad Fahim, a beginner Python developer from Pakistan with a growing passion for code and creativity. I specialize in Python, Scratch, SQL, and Panda3D game development. Besides coding, I'm an expert Canva designer, creating eye-catching presentations, logos, thumbnails, infographics, and more.</p>
-  </section>
+      <div class="split">
+        <div>
+          <h3 class="section-title" style="margin-top:18px;">System</h3>
+          <pre class="mono">OS          : Windows 10 IoT Enterprise LTSC (21H2)
+Shell       : PowerShell 7.5.4
+Terminal    : Windows Terminal
+Packages    : Scoop
+Architecture: x86_64</pre>
+        </div>
+        <div>
+          <h3 class="section-title" style="margin-top:18px;">Goals</h3>
+          <ul class="list">
+            <li>Build useful Python projects</li>
+            <li>Improve Linux knowledge</li>
+            <li>Learn software development fundamentals</li>
+            <li>Contribute to open-source projects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <section id="skills" class="section">
-    <h2>🌟 Skills & Tools</h2>
-    <ul>
-      <li>Python Programming & Panda3D Game Dev</li>
-      <li>Scratch & SQL Databases</li>
-      <li>Professional Canva Designs (logos, thumbnails, posts)</li>
-      <li>Creative Presentations & Infographics</li>
-      <li>Git, Bash, SQLite, MySQL</li>
-    </ul>
-    <div class="tools">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
-      <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="SQLite">
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL">
-      <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRoE5DcalLnKRtZfuKddbpQxE2rGNLe6jXw&s" alt="Canva" style="background:white; border-radius:5px;">
-    </div>
-  </section>
+    <section class="card section">
+      <h3 class="section-title">Latest Repositories</h3>
+      <p style="color:var(--muted); line-height:1.7;">
+        Showing the most recently updated repositories from <a class="inline-link" href="https://github.com/EmadFahim134" target="_blank" rel="noreferrer">GitHub</a>.
+      </p>
+      <div id="repos" class="repos">Loading repositories...</div>
+    </section>
 
-  <section id="canva" class="section">
-    <h2>🎨 Canva Portfolio</h2>
-    <p>Below is a sample of my design work using Canva. I specialize in presentations, social media graphics, YouTube thumbnails, and more. I blend design with storytelling to create engaging visuals.</p>
-    <!-- Replace this iframe with your own Canva shared project link -->
-    <iframe src="https://www.canva.com/design/DAF-DGZbsrs/view?embed" allowfullscreen></iframe>
-  </section>
+    <section class="card section">
+      <h3 class="section-title">Closing Note</h3>
+      <p style="color:var(--muted); line-height:1.8; font-size:1.02rem;">
+        Every expert was once a beginner. Thanks for visiting my profile.
+      </p>
+    </section>
 
-  <section id="contact" class="section">
-    <h2>📬 Contact Me</h2>
-    <p>📧 Email: <a href="mailto:mremad.fahim@gmail.com">mremad.fahim@gmail.com</a></p>
-    <div class="social-icons">
-      <a href="https://instagram.com/emad.delta45" target="_blank">
-        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram">
-      </a>
-      <a href="https://discord.gg/XNSfuADUuu" target="_blank">
-        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Discord">
-      </a>
-    </div>
-  </section>
+    <div class="footer">Simple layout. Clear identity. Professional finish.</div>
+  </div>
 
-  <section id="stats" class="section">
-    <h2>📊 GitHub Stats</h2>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=emadfahim134&show_icons=true&locale=en&layout=compact" alt="Top Languages" style="width:100%; max-width:600px; display:block; margin:auto;">
-  </section>
+  <script>
+    const themeKey = "emad-theme";
+    const githubUser = "EmadFahim134";
+    const body = document.body;
+    const btn = document.getElementById("themeBtn");
 
-</div>
+    function applyTheme(theme) {
+      body.classList.toggle("light", theme === "light");
+      btn.textContent = theme === "light" ? "Use dark theme" : "Use light theme";
+      localStorage.setItem(themeKey, theme);
+    }
 
-<footer>
-  © 2025 Emad Fahim | Designed with HTML, CSS & Passion | Hosted on GitHub Pages
-</footer>
+    function toggleTheme() {
+      const next = body.classList.contains("light") ? "dark" : "light";
+      applyTheme(next);
+    }
 
-<script>
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-    document.querySelector('.toggle-button').textContent =
-      document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
-  }
-</script>
+    const savedTheme = localStorage.getItem(themeKey) || "dark";
+    applyTheme(savedTheme);
 
+    async function loadProfilePic() {
+      const img = document.getElementById("profilePic");
+      try {
+        const response = await fetch(`https://api.github.com/users/${githubUser}`);
+        if (!response.ok) throw new Error("Failed to load profile data");
+        const user = await response.json();
+        img.src = user.avatar_url;
+      } catch (error) {
+        img.removeAttribute("src");
+      }
+    }
+
+    loadProfilePic();
+
+    async function loadRepos() {
+      const reposEl = document.getElementById("repos");
+      try {
+        const response = await fetch("https://api.github.com/users/EmadFahim134/repos?sort=updated&per_page=8");
+        if (!response.ok) throw new Error("Failed to load repositories");
+        const repos = await response.json();
+
+        const visible = repos
+          .filter(repo => !repo.fork)
+          .slice(0, 6);
+
+        if (!visible.length) {
+          reposEl.innerHTML = "<p style='color:var(--muted)'>No repositories found.</p>";
+          return;
+        }
+
+        reposEl.innerHTML = visible.map(repo => `
+          <article class="repo">
+            <a href="${repo.html_url}" target="_blank" rel="noreferrer">${repo.name}</a>
+            <p>${repo.description || "No description provided."}</p>
+            <div class="meta">
+              <span class="badge">${repo.language || "Code"}</span>
+              <span class="badge">★ ${repo.stargazers_count}</span>
+              <span class="badge">Updated</span>
+            </div>
+          </article>
+        `).join("");
+      } catch (error) {
+        reposEl.innerHTML = `<p style="color:var(--muted)">Unable to load repositories right now.</p>`;
+      }
+    }
+
+    loadRepos();
+  </script>
 </body>
 </html>
-                                                                                                    
-  
-  
-  
-  
-  
-                                                                                                                                            
-  
-  
-  
-  
-  
-  
-  
-                      
-                      
-                      
-                      
-                      
-                                                                                                      
-  
-  
-  
-  
-  
