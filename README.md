@@ -1,23 +1,78 @@
-[![MasterHead](https://user-images.githubusercontent.com/90236635/232446433-d5540fa2-fe28-4bb8-b929-cdb51fe61336.gif)](https://EmadFahim134.io)
-<h1 align="center">Hi 👋, I'm Emad Fahim</h1>
-<h3 align="center">A passionate beginner python developer from Pakistan!</h3>
-<img align="right" alt="Coding" width="400" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif">
+# Hey there, I'm Emad Fahim 👋
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=emadfahim134&label=Profile%20views&color=0e75b6&style=flat" alt="emadfahim134" /> </p>
+```text
+> Learning. Building. Improving.
+```
 
-- 🌱 I’m currently learning **Python , Panda3d**
+I'm a student and tech enthusiast who enjoys exploring programming, automation, Linux, and creative design. I like turning ideas into practical projects while continuously expanding my knowledge.
 
-- 💬 Ask me about **Scratch & SQL**
+---
 
-- 📫 How to reach me **mremad.fahim@gmail.com**
+## 🚀 About Me
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://instagram.com/emad.delta45" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="emad.delta45" height="30" width="40" /></a>
-<a href="https://discord.gg/https://discord.gg/XNSfuADUuu" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="https://discord.gg/XNSfuADUuu" height="30" width="40" /></a>
+- Intermediate Python learner
+- Basic knowledge of C programming
+- Linux enthusiast
+- Bash & Batch scripting
+- Canva designer
+- Always learning something new
+
+---
+
+## 🛠 Tech & Tools
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python,c,linux,bash,git,github,vscode" />
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> </p>
+### Additional Skills
+- Canva Designing
+- Automation Scripts
+- Command Line Tools
+- System Customization
 
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=emadfahim134&show_icons=true&locale=en&layout=compact" alt="emadfahim134" /></p>
+---
+
+## 💻 My Setup
+
+```text
+OS         : Windows 10 IoT Enterprise LTSC (21H2)
+Shell      : PowerShell 7.5.4
+Terminal   : Windows Terminal
+Packages   : Scoop
+Architecture : x86_64
+```
+
+---
+
+## 🌱 Currently Learning
+
+- Advanced Python Concepts
+- Linux Administration
+- Open Source Contribution
+- Automation & Productivity Tools
+
+---
+
+## 🎯 Goals
+
+- Build useful Python projects
+- Improve Linux knowledge
+- Learn software development fundamentals
+- Contribute to open-source projects
+
+---
+
+## 📫 Find Me
+
+- GitHub: **EmadFahim134**
+
+---
+
+<div align="center">
+
+### "Every expert was once a beginner."
+
+⭐ Thanks for visiting my profile!
+
+</div>
