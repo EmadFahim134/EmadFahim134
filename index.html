@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emad Fahim</title>
+  <link id="favicon" rel="icon" href="" />
   <style>
     :root {
       --bg: #0d1117;
@@ -460,6 +461,7 @@ Architecture: x86_64</pre>
   <script>
     const themeKey = "emad-theme";
     const githubUser = "EmadFahim134";
+    const favicon = document.getElementById("favicon");
     const body = document.body;
     const btn = document.getElementById("themeBtn");
 
@@ -484,8 +486,10 @@ Architecture: x86_64</pre>
         if (!response.ok) throw new Error("Failed to load profile data");
         const user = await response.json();
         img.src = user.avatar_url;
+        favicon.href = user.avatar_url;
       } catch (error) {
         img.removeAttribute("src");
+        favicon.href = "";
       }
     }
 
