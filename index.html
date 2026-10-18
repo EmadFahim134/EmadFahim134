@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Emad Fahim — Python and AI developer building practical automation, data, and Linux tools." />
+  <meta name="theme-color" content="#07111f" />
+  <title>Emad Fahim | Python & AI Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --bg: #030d09;
+  --bg-soft: #071610;
+  --surface: #0b1d17;
+  --surface-light: #102b22;
+  --line: rgba(187, 224, 210, 0.16);
+  --text: #f5faf7;
+  --muted: #9eb8ad;
+  --faint: #66877a;
+  --accent: #24b9a7;
+  --accent-bright: #8de8d5;
+  --cyan: #32c9c0;
+  --green: #b9d96a;
+  --orange: #d8c96b;
+  --pink: #c7e3c5;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+.site-shell { width: min(100%, 1440px); margin: 0 auto; overflow: hidden; }
+.site-header, .section-pad, .site-footer { padding-left: clamp(24px, 7vw, 108px); padding-right: clamp(24px, 7vw, 108px); }
+.site-header { min-height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -0.02em; }
+.wordmark-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent-bright); font: 700 12px "Space Mono", monospace; }
+.desktop-nav { display: flex; gap: 32px; margin-left: auto; margin-right: 42px; color: var(--muted); font-size: 14px; }
+.desktop-nav a, .header-github, .text-link, .social-links a { transition: color .2s ease; }
+.desktop-nav a:hover, .header-github:hover, .text-link:hover, .social-links a:hover { color: var(--accent-bright); }
+.header-github { font: 12px "Space Mono", monospace; color: var(--muted); }
+.header-github span, .text-link span, .project-link span { color: var(--accent-bright); }
+.hero { min-height: 660px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 56px; padding-top: 76px; padding-bottom: 78px; }
+.eyebrow { margin: 0 0 20px; color: var(--accent-bright); font: 700 11px "Space Mono", monospace; letter-spacing: .14em; text-transform: uppercase; }
+.status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 7px; background: var(--green); box-shadow: 0 0 0 5px rgba(127, 227, 161, .09); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 760px; margin-bottom: 26px; font-size: clamp(52px, 6.3vw, 88px); line-height: 1.02; letter-spacing: -.065em; }
+h2 { margin-bottom: 0; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.05; letter-spacing: -.055em; }
+.accent-text { color: var(--accent-bright); }
+.hero-lede { max-width: 570px; margin-bottom: 34px; color: var(--muted); font-size: 18px; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.button { display: inline-flex; align-items: center; gap: 18px; min-height: 50px; padding: 0 20px; border-radius: 4px; font-size: 14px; font-weight: 700; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { background: var(--accent); color: #03110d; box-shadow: 0 10px 30px rgba(36, 185, 167, .2); }
+.button-primary:hover { background: var(--accent-bright); }
+.button-secondary { border: 1px solid var(--line); color: var(--text); }
+.button-secondary:hover { border-color: rgba(141, 232, 213, .7); }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 35px; color: var(--faint); font: 11px "Space Mono", monospace; text-transform: uppercase; }
+.hero-meta span::before { content: "//"; margin-right: 7px; color: var(--accent); }
+.hero-visual { position: relative; min-height: 450px; display: grid; place-items: center; }
+.profile-card { position: relative; z-index: 2; width: min(100%, 455px); border: 1px solid rgba(163, 186, 213, .2); border-radius: var(--radius); background: rgba(16, 30, 49, .92); box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2); transform: none; overflow: hidden; }
+.profile-card-top { display: flex; align-items: center; gap: 7px; height: 46px; padding: 0 18px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .025); }
+.terminal-dot { width: 8px; height: 8px; border-radius: 50%; opacity: .8; }.red { background: #ee777c; }.yellow { background: #f2c36d; }.green { background: #77d398; }
+.terminal-title { margin-left: 9px; color: var(--faint); font: 10px "Space Mono", monospace; }
+.code-block { padding: 31px 28px 35px; font: 14px/2.2 "Space Mono", monospace; }.code-block p { margin: 0; white-space: nowrap; }.code-muted { display: inline-block; width: 28px; color: #4d627b; }.code-purple { color: #c79cff; }.code-blue { color: #7ed5ff; }.code-green { color: #8de7b2; }.code-white { color: #eaf0f8; }.code-indent { color: #cfdae9; }.cursor { display: inline-block; width: 7px; height: 17px; margin-left: 6px; vertical-align: -3px; background: var(--accent); animation: blink 1s step-end infinite; }
+.profile-card-footer { display: flex; align-items: center; gap: 9px; height: 41px; padding: 0 18px; border-top: 1px solid var(--line); color: var(--faint); font: 10px "Space Mono", monospace; }.profile-card-footer > span:last-child { margin-left: auto; color: var(--green); font-size: 8px; }.pulse-line { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.orbit { display: none; position: absolute; border: 1px solid rgba(36, 185, 167, .22); border-radius: 50%; transform: rotate(-28deg); }.orbit-one { width: 530px; height: 230px; }.orbit-two { width: 300px; height: 500px; border-color: rgba(50, 201, 192, .15); transform: rotate(30deg); }.floating-badge { position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 4px; background: #102b22; color: var(--muted); box-shadow: 0 12px 28px rgba(0,0,0,.24); font: 11px "Space Mono", monospace; }.floating-badge span { color: var(--accent-bright); font-size: 15px; }.badge-ai { top: 50px; right: -12px; }.badge-data { bottom: 39px; left: -26px; }.badge-data span { color: var(--cyan); }
+.signal-bar { display: flex; align-items: center; gap: clamp(30px, 9vw, 150px); padding-top: 24px; padding-bottom: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }.signal-bar div { display: flex; align-items: baseline; gap: 13px; }.signal-bar strong { color: var(--text); font: 700 16px "Space Mono", monospace; }.signal-bar span { color: var(--faint); font-size: 12px; }
+.projects { padding-top: 130px; padding-bottom: 140px; }.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 51px; }.text-link { color: var(--muted); font: 12px "Space Mono", monospace; }.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }.project-card { min-height: 355px; display: flex; flex-direction: column; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: #0b2119; transition: transform .25s ease, border-color .25s ease; }.project-card:hover { transform: translateY(-6px); border-color: rgba(141, 232, 213, .52); }.project-featured { background: #103326; }.project-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 30px; border-radius: 4px; font-size: 21px; }.icon-purple { background: rgba(140,123,255,.16); color: var(--accent-bright); }.icon-blue { background: rgba(50,201,192,.14); color: var(--cyan); }.icon-green { background: rgba(127,227,161,.14); color: var(--green); }.icon-orange { background: rgba(255,189,119,.14); color: var(--orange); }.icon-pink { background: rgba(240,155,208,.14); color: var(--pink); }.icon-cyan { background: rgba(99,217,232,.14); color: var(--cyan); }.project-type { color: var(--faint); font: 10px "Space Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }.project-card h3 { margin: 8px 0 10px; font-size: 25px; letter-spacing: -.04em; }.project-card p { margin-bottom: 20px; color: var(--muted); font-size: 14px; line-height: 1.65; }.project-note { margin: -7px 0 18px !important; color: var(--green) !important; font: 11px "Space Mono", monospace; line-height: 1.5 !important; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; margin-bottom: 22px; }.project-tags span { padding: 4px 8px; border: 1px solid var(--line); border-radius: 2px; color: var(--faint); font: 10px "Space Mono", monospace; }.project-link { color: var(--text); font-size: 13px; font-weight: 700; }.project-link span { margin-left: 7px; }
+.skills { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(55px, 10vw, 155px); padding-top: 120px; padding-bottom: 130px; border-top: 1px solid var(--line); }.skills-intro h2 { margin-bottom: 27px; }.muted-text { color: var(--faint); }.skills-intro > p:last-child { max-width: 330px; color: var(--muted); font-size: 15px; }.skill-row { display: grid; grid-template-columns: 38px 1fr 20px; gap: 23px; padding: 23px 0; border-bottom: 1px solid var(--line); }.skill-number, .skill-arrow { color: var(--accent-bright); font: 11px "Space Mono", monospace; }.skill-row h3 { margin-bottom: 4px; font-size: 19px; }.skill-row p { margin-bottom: 0; color: var(--muted); font-size: 13px; }.skill-arrow { align-self: start; text-align: right; font-size: 17px; }
+.about { display: grid; grid-template-columns: .65fr 1.35fr; gap: 80px; padding-top: 130px; padding-bottom: 140px; border-top: 1px solid var(--line); }.about-mark { color: var(--accent-bright); font: 700 clamp(80px, 15vw, 190px)/.8 "Space Mono", monospace; letter-spacing: -.16em; opacity: .9; }.about-mark span { color: var(--cyan); }.about h2 { margin-bottom: 30px; }.about-copy { max-width: 590px; margin-bottom: 27px; color: var(--muted); font-size: 17px; line-height: 1.75; }
+.contact { display: flex; justify-content: space-between; gap: 50px; padding-top: 100px; padding-bottom: 110px; border-top: 1px solid var(--line); }.contact-right { max-width: 375px; padding-top: 24px; }.contact-right > p { color: var(--muted); font-size: 15px; }.contact-right .button { margin-top: 18px; }.social-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 38px; color: var(--faint); font: 11px "Space Mono", monospace; }.site-footer { display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; padding-bottom: 28px; border-top: 1px solid var(--line); color: var(--faint); font: 10px "Space Mono", monospace; }.site-footer a:hover { color: var(--accent-bright); }
+.identity-row { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; color: var(--muted); font: 11px "Space Mono", monospace; }
+.hero-avatar { width: 46px; height: 46px; border: 2px solid var(--accent); border-radius: 50%; object-fit: cover; }
+.pinned { padding-top: 110px; padding-bottom: 120px; border-top: 1px solid var(--line); }
+.pinned-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.pinned-repo { display: grid; grid-template-columns: 12px 1fr 18px; align-items: start; gap: 15px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #0b2119; transition: border-color .2s ease, transform .2s ease; }
+.pinned-repo:hover { border-color: rgba(141, 232, 213, .52); transform: translateY(-3px); }
+.pinned-repo h3 { margin: 0 0 5px; font-size: 16px; }
+.pinned-repo p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.repo-language { width: 9px; height: 9px; margin-top: 6px; border-radius: 50%; background: var(--accent); }
+.repo-python { background: #e4cf57; }.repo-html { background: #ee8068; }.repo-batch { background: #8de8d5; }
+.repo-arrow { color: var(--accent-bright); font: 16px "Space Mono", monospace; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: 65px; }.hero-visual { min-height: 390px; max-width: 610px; width: 100%; margin: 0 auto; }.project-grid { grid-template-columns: repeat(2, 1fr); }.skills { grid-template-columns: 1fr; gap: 50px; }.about { grid-template-columns: 1fr; gap: 40px; }.about-mark { font-size: 100px; }.contact { flex-direction: column; }.contact-right { padding-top: 0; } }
+@media (max-width: 620px) { .site-header { min-height: 72px; }.desktop-nav { display: none; }.header-github { margin-left: auto; }.hero { min-height: auto; padding-top: 55px; padding-bottom: 60px; }.hero-lede { font-size: 16px; }.hero-visual { min-height: 350px; }.profile-card { transform: none; }.orbit-one { width: 420px; height: 190px; }.orbit-two { width: 250px; height: 400px; }.badge-ai { top: 22px; right: -4px; }.badge-data { bottom: 18px; left: -6px; }.signal-bar { align-items: flex-start; flex-direction: column; gap: 15px; padding-top: 21px; padding-bottom: 21px; }.signal-bar div { width: 100%; justify-content: space-between; }.projects { padding-top: 85px; padding-bottom: 90px; }.section-heading { align-items: flex-start; flex-direction: column; margin-bottom: 36px; }.project-grid, .pinned-grid { grid-template-columns: 1fr; }.project-card { min-height: 330px; }.pinned, .skills, .about { padding-top: 85px; padding-bottom: 90px; }.contact { padding-top: 75px; padding-bottom: 80px; }.site-footer { align-items: flex-start; flex-direction: column; gap: 10px; }.code-block { padding-left: 17px; padding-right: 12px; font-size: 11px; }.code-muted { width: 22px; } }
+
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Emad Fahim home">
+        <span class="wordmark-mark">EF</span>
+        <span>Emad Fahim</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-github" href="https://github.com/EmadFahim134" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-pad">
+        <div class="hero-copy">
+          <div class="identity-row"><img class="hero-avatar" src="https://avatars.githubusercontent.com/u/176628349?v=4" alt="Emad Fahim GitHub profile picture" /><span>Emad Fahim · @EmadFahim134</span></div>
+          <p class="eyebrow"><span class="status-dot"></span> Available for learning, building & collaboration</p>
+          <h1>Practical software for <span class="accent-text">real problems.</span></h1>
+          <p class="hero-lede">I’m Emad, a Python and AI developer building useful automation, data, and Linux tools — one thoughtful project at a time.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://github.com/EmadFahim134" target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-meta" aria-label="Core skills">
+            <span>Python</span><span>AI / LLMs</span><span>Pandas</span><span>Linux</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Developer profile illustration">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="profile-card">
+            <div class="profile-card-top"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-title">~/emad/projects</span></div>
+            <div class="code-block">
+              <p><span class="code-muted">01</span> <span class="code-purple">class</span> <span class="code-blue">Builder</span><span class="code-white">:</span></p>
+              <p><span class="code-muted">02</span> <span class="code-indent">focus = </span><span class="code-green">"useful tools"</span></p>
+              <p><span class="code-muted">03</span> <span class="code-indent">stack = </span><span class="code-green">["python", "ai"]</span></p>
+              <p><span class="code-muted">04</span> <span class="code-indent">mindset = </span><span class="code-green">"keep learning"</span></p>
+              <p><span class="code-muted">05</span> <span class="code-white"> </span></p>
+              <p><span class="code-muted">06</span> <span class="code-purple">return</span> <span class="code-blue">impact</span><span class="cursor"></span></p>
+            </div>
+            <div class="profile-card-footer"><span class="pulse-line"></span> building in public <span>●</span></div>
+          </div>
+          <div class="floating-badge badge-ai"><span>✦</span> AI tools</div>
+          <div class="floating-badge badge-data"><span>▦</span> Data workflows</div>
+        </div>
+      </section>
+
+      <section class="signal-bar section-pad" aria-label="Portfolio highlights">
+        <div><strong>06+</strong><span>Selected projects</span></div>
+        <div><strong>Python</strong><span>Primary language</span></div>
+        <div><strong>Build → Learn</strong><span>Working philosophy</span></div>
+      </section>
+
+      <section class="projects section-pad" id="projects">
+        <div class="section-heading">
+          <div><p class="eyebrow">Selected work</p><h2>Things I’ve been building.</h2></div>
+          <a class="text-link" href="https://github.com/EmadFahim134?tab=repositories" target="_blank" rel="noreferrer">See all repositories <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-featured">
+            <div class="project-icon icon-purple">✦</div><span class="project-type">AI / NLP</span>
+            <h3>Veil</h3>
+            <p>An AI assistant for summarizing, rewriting, drafting, and explaining documents. Fine-tuned with QLoRA/Unsloth and hosted on Hugging Face.</p>
+            <div class="project-tags"><span>Python</span><span>QLoRA</span><span>Hugging Face</span></div>
+            <a class="project-link" href="https://github.com/EmadFahim134/Veil" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon icon-blue">✓</div><span class="project-type">Data / Automation</span>
+            <h3>Checker</h3>
+            <p>A CSV quality-assurance tool designed to catch data problems before they become downstream issues.</p>
+            <div class="project-tags"><span>Python</span><span>Pandas</span><span>CSV</span></div>
+            <a class="project-link" href="https://github.com/EmadFahim134/Checker" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon icon-green">∿</div><span class="project-type">Experiments / Audio</span>
+            <h3>VectorVoice</h3>
+            <p>A text-to-speech concept that explores how Pandas, NumPy, math, and language can create sound from first principles.</p>
+            <div class="project-tags"><span>Pandas</span><span>NumPy</span><span>Python</span></div>
+            <a class="project-link" href="https://github.com/EmadFahim134/VectorVoice" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon icon-green">▤</div><span class="project-type">Education / AI</span>
+            <h3>TantouSheets</h3>
+            <p>An AI-assisted worksheet creator designed to help educators create and edit learning materials faster.</p>
+            <p class="project-note">Under development — planned to use Veil AI.</p>
+            <div class="project-tags"><span>Python</span><span>AI</span><span>Education</span></div>
+            <a class="project-link" href="https://github.com/EmadFahim134/TantouSheets" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon icon-green">⌁</div><span class="project-type">Systems / Networking</span>
+            <h3>Oxie-Talk</h3>
+            <p>A serverless chat application exploring the intersection of Python and Rust.</p>
+            <p class="project-note">Vibe-coded with Google Jules.</p>
+            <div class="project-tags"><span>Python</span><span>Rust</span><span>Chat</span></div>
+            <a class="project-link" href="https://github.com/EmadFahim134/Oxie-Talk" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="project-card">
+            <div class="project-icon icon-cyan">⌘</div><span class="project-type">CLI / Python</span>
+            <h3>Project SLVL</h3>
+            <p>A portable command-line launcher for classic games, built with Python, packaging, logs, and Windows automation.</p>
+            <div class="project-tags"><span>Python</span><span>CLI</span><span>PyInstaller</span></div>
+            <a class="project-link" href="https://github.com/EmadFahim134/Project-SLVL" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="pinned section-pad" id="pinned">
+        <div class="section-heading">
+          <div><p class="eyebrow">From GitHub</p><h2>Pinned repositories.</h2></div>
+          <a class="text-link" href="https://github.com/EmadFahim134" target="_blank" rel="noreferrer">Open profile <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="pinned-grid">
+          <a class="pinned-repo" href="https://github.com/EmadFahim134/EmadFahim134" target="_blank" rel="noreferrer"><span class="repo-language repo-html"></span><div><h3>EmadFahim134</h3><p>Profile README and personal developer identity.</p></div><span class="repo-arrow">↗</span></a>
+          <a class="pinned-repo" href="https://github.com/EmadFahim134/Project-SLVL" target="_blank" rel="noreferrer"><span class="repo-language repo-python"></span><div><h3>Project-SLVL</h3><p>Python launcher for classic games and mods.</p></div><span class="repo-arrow">↗</span></a>
+          <a class="pinned-repo" href="https://github.com/EmadFahim134/code-graveyard" target="_blank" rel="noreferrer"><span class="repo-language repo-batch"></span><div><h3>code-graveyard</h3><p>A home for abandoned experiments and ideas.</p></div><span class="repo-arrow">↗</span></a>
+          <a class="pinned-repo" href="https://github.com/EmadFahim134/Kitti" target="_blank" rel="noreferrer"><span class="repo-language repo-python"></span><div><h3>Kitti</h3><p>Chromecast media casting from the command line.</p></div><span class="repo-arrow">↗</span></a>
+          <a class="pinned-repo" href="https://github.com/EmadFahim134/VectorVoice" target="_blank" rel="noreferrer"><span class="repo-language repo-python"></span><div><h3>VectorVoice</h3><p>Experimental text-to-speech with Pandas and NumPy.</p></div><span class="repo-arrow">↗</span></a>
+          <a class="pinned-repo" href="https://github.com/EmadFahim134/Emad-s_MP" target="_blank" rel="noreferrer"><span class="repo-language repo-python"></span><div><h3>Emad's MP</h3><p>A simple media player with GUI and CLI interfaces.</p></div><span class="repo-arrow">↗</span></a>
+        </div>
+      </section>
+
+      <section class="skills section-pad" id="skills">
+        <div class="skills-intro"><p class="eyebrow">The toolkit</p><h2>Curious by default.<br /><span class="muted-text">Practical by design.</span></h2><p>I like understanding how things work, then turning that understanding into tools that are clear, useful, and easy to run.</p></div>
+        <div class="skills-list">
+          <div class="skill-row"><span class="skill-number">01</span><div><h3>Python & AI</h3><p>Python applications, LLM workflows, automation, APIs, and experiments that make complex tasks simpler.</p></div><span class="skill-arrow">↗</span></div>
+          <div class="skill-row"><span class="skill-number">02</span><div><h3>Data & Pandas</h3><p>CSV processing, data cleaning, quality checks, worksheet tools, and practical analysis workflows.</p></div><span class="skill-arrow">↗</span></div>
+          <div class="skill-row"><span class="skill-number">03</span><div><h3>Linux & Scripting</h3><p>Bash, command-line tools, system workflows, packaging, and the small scripts that save time.</p></div><span class="skill-arrow">↗</span></div>
+          <div class="skill-row"><span class="skill-number">04</span><div><h3>Learning in Public</h3><p>Open-source projects, readable documentation, experiments, and steady improvement through building.</p></div><span class="skill-arrow">↗</span></div>
+        </div>
+      </section>
+
+      <section class="about section-pad" id="about">
+        <div class="about-mark">EF<span>.</span></div>
+        <div><p class="eyebrow">A little about me</p><h2>Learning, building,<br /><span class="accent-text">improving.</span></h2><p class="about-copy">I’m a student and developer from Karachi focused on programming, automation, Linux, and creative problem-solving. I enjoy building useful things, learning the fundamentals properly, and keeping my workflow simple.</p><a class="text-link" href="https://www.linkedin.com/in/emadfahimsiddiqui/" target="_blank" rel="noreferrer">Connect on LinkedIn <span>↗</span></a></div>
+      </section>
+
+      <section class="contact section-pad" id="contact">
+        <div><p class="eyebrow">Have a project in mind?</p><h2>Let’s make something<br /><span class="accent-text">useful.</span></h2></div>
+        <div class="contact-right"><p>Whether you want to discuss an idea, collaborate on an open-source project, or simply say hello, my inbox is open.</p><a class="button button-primary" href="mailto:mremad.fahim@gmail.com">Send me an email <span aria-hidden="true">↗</span></a><div class="social-links"><a href="https://github.com/EmadFahim134" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/emadfahimsiddiqui/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.instagram.com/emad__siddique/" target="_blank" rel="noreferrer">Instagram</a></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>© 2026 Emad Fahim</span><span>Built with curiosity & code</span><a href="#top">Back to top ↑</a></footer>
+  </div>
+</body>
+</html>
